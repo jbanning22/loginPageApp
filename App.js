@@ -13,6 +13,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import Button from './src/components/Button';
 import {faMugSaucer} from '@fortawesome/free-solid-svg-icons/faMugSaucer';
 import {faUser} from '@fortawesome/free-solid-svg-icons/faUser';
+import {faLock} from '@fortawesome/free-solid-svg-icons/faLock';
 
 const image = './src/img/bgImage.png';
 
@@ -32,23 +33,42 @@ const App = () => {
             <Text>Log into your acccount.</Text>
           </View> */}
 
-          {/* <View style={styles.input}>  */}
-          <FontAwesomeIcon icon={faUser} color={'white'} size={24} />
-          <TextInput
-            placeholder="Username"
-            placeholderTextColor={'white'}
-            style={styles.input}
-          />
-          {/* </View> */}
+          <View
+            style={{
+              flexDirection: 'row',
+              borderRadius: 30,
+              borderWidth: 1,
+              borderColor: 'white',
+              width: 300,
+            }}>
+            <FontAwesomeIcon
+              icon={faUser}
+              color={'white'}
+              size={24}
+              style={{marginLeft: 20, marginTop: 10}}
+            />
+            <TextInput
+              placeholder="Username"
+              autoCorrect={false}
+              placeholderTextColor={'white'}
+              style={styles.input}
+            />
+          </View>
 
-          {/* <View style={styles.input}> */}
-          {/* <FontAwesomeIcon icon="fa-solid fa-lock" /> */}
-          <TextInput
-            placeholder="Passsword"
-            placeholderTextColor={'white'}
-            style={styles.input}
-          />
-          {/* </View> */}
+          <View style={styles.inputContainer}>
+            <FontAwesomeIcon
+              icon={faLock}
+              color={'white'}
+              size={24}
+              style={{marginLeft: 20, marginTop: 10}}
+            />
+            <TextInput
+              placeholder="Passsword"
+              autocorrect={false}
+              placeholderTextColor={'white'}
+              style={styles.input}
+            />
+          </View>
 
           <View style={styles.frgtPassword}>
             <Text style={{color: 'white'}}>Forgot Password?</Text>
@@ -64,7 +84,7 @@ const App = () => {
 
           <View style={styles.socialMediaButtons}>
             <TouchableOpacity style={styles.socialButton}>
-              {/* <FontAwesomeIcon icon="fa-brands fa-facebook" /> */}
+              {/* <FontAwesomeIcon icon="fa-brands fa-facebook" />
               <Text style={{color: 'black', alignSelf: 'center'}}>
                 Facebook
               </Text>
@@ -107,15 +127,24 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     width: 300,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-    padding: 5,
+    // justifyContent: 'center',
+    // alignItems: 'center'
+
+    // padding: 5,
     fontFamily: 'Tamil Sangam MN',
-    borderRadius: 30,
+
     borderColor: 'white',
-    marginVertical: 20,
-    paddingLeft: 60,
+    // marginVertical: 20,
+    paddingLeft: 20,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: 'white',
+    width: 300,
+    marginTop: 20,
+    marginBottom: 5,
   },
   button1: {
     backgroundColor: 'green',
@@ -158,6 +187,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     alignSelf: 'center',
-    padding: 5,
+    // padding: 5,
   },
 });
