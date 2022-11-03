@@ -9,7 +9,13 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {
+  FontAwesomeIcon,
+  SolidIcons,
+  RegularIcons,
+  BrandIcons,
+  parseIconFromClassName,
+} from '@fortawesome/react-native-fontawesome';
 import Button from './src/components/Button';
 
 const image = './src/img/bgImage.png';
@@ -32,12 +38,20 @@ const App = () => {
 
           {/* <View style={styles.input}> */}
           {/* <FontAwesomeIcon icon="fa-solid fa-user" /> */}
-          <TextInput placeholder="Username" style={styles.input} />
+          <TextInput
+            placeholder="Username"
+            placeholderTextColor={'white'}
+            style={styles.input}
+          />
           {/* </View> */}
 
           {/* <View style={styles.input}> */}
           {/* <FontAwesomeIcon icon="fa-solid fa-lock" /> */}
-          <TextInput placeholder="Passsword" style={styles.input} />
+          <TextInput
+            placeholder="Passsword"
+            placeholderTextColor={'white'}
+            style={styles.input}
+          />
           {/* </View> */}
 
           <View style={styles.frgtPassword}>
@@ -54,7 +68,7 @@ const App = () => {
 
           <View style={styles.socialMediaButtons}>
             <TouchableOpacity style={styles.socialButton}>
-              {/* <FontAwesomeIcon icon="fa-brands fa-facebook" /> */}
+              <FontAwesomeIcon icon="fa-brands fa-facebook" />
               <Text style={{color: 'black', alignSelf: 'center'}}>
                 Facebook
               </Text>
@@ -105,6 +119,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     borderColor: 'white',
     marginVertical: 20,
+    paddingLeft: 60,
   },
   button1: {
     backgroundColor: 'green',

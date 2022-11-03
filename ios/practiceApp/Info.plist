@@ -16,6 +16,12 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+   <key>UIAppFonts</key>
+<array>
+    <string>fonts/fa-brands-400.ttf</string>
+    <string>fonts/fa-regular-400.ttf</string>
+    <string>fonts/fa-solid-900.ttf</string>
+</array>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
