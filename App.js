@@ -16,9 +16,9 @@ const image = './src/img/bgImage.png';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <ImageBackground source={require(image)} resizeMode="cover">
+    <SafeAreaView style={styles.screen}>
+      <ImageBackground source={require(image)} style={{flex: 1}}>
+        <View style={styles.container}>
           <Image
             style={styles.logoStyle}
             source={require('./src/img/logo.jpg')}
@@ -27,15 +27,15 @@ const App = () => {
             <Text>Log into your acccount.</Text>
           </View>
 
-          <View style={styles.box1}>
-            {/* <FontAwesomeIcon icon="fa-solid fa-user" /> */}
-            <TextInput style={{placeholder: 'Username'}}>Username</TextInput>
-          </View>
+          {/* <View style={styles.input}> */}
+          {/* <FontAwesomeIcon icon="fa-solid fa-user" /> */}
+          <TextInput placeholder="Username" style={styles.input} />
+          {/* </View> */}
 
-          <View style={styles.box2}>
-            {/* <FontAwesomeIcon icon="fa-solid fa-lock" /> */}
-            <Text>Password</Text>
-          </View>
+          {/* <View style={styles.input}> */}
+          {/* <FontAwesomeIcon icon="fa-solid fa-lock" /> */}
+          <TextInput placeholder="Passsword" style={styles.input} />
+          {/* </View> */}
 
           <View style={styles.frgtPassword}>
             <Text>Forgot Password?</Text>
@@ -54,13 +54,14 @@ const App = () => {
               {/* <FontAwesomeIcon icon="fa-brands fa-facebook" /> */}
               <Text>Facebook</Text>
             </TouchableOpacity>
+
             <TouchableOpacity>
               {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
               <Text>Twitter</Text>
             </TouchableOpacity>
           </View>
-        </ImageBackground>
-      </View>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -68,6 +69,9 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -83,33 +87,21 @@ const styles = StyleSheet.create({
   directions: {
     alignSelf: 'center',
     marginTop: 30,
+    marginBottom: 30,
   },
-  box1: {
+  input: {
     height: 50,
     width: 300,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'grey',
-    marginTop: 200,
-    marginBottom: 30,
+    borderWidth: 1,
     padding: 5,
     fontFamily: 'Tamil Sangam MN',
     borderRadius: 30,
     borderColor: 'white',
-  },
-  box2: {
-    height: 50,
-    width: 300,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'grey',
-    marginBottom: 10,
-    fontFamily: 'Tamil Sangam MN',
-    borderRadius: 30,
-    borderColor: 'white',
+    marginVertical: 20,
   },
   button1: {
-    flex: 1,
     backgroundColor: 'green',
     height: 40,
     width: 75,
@@ -134,7 +126,12 @@ const styles = StyleSheet.create({
     height: 30,
   },
   socialMediaButtons: {
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
+    alignSelf: 'center',
+    backgroundColor: 'red',
+
     width: 20,
   },
 });
