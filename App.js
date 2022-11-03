@@ -21,7 +21,7 @@ const image = './src/img/bgImage.png';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.screen}>
+    <View style={styles.screen}>
       <ImageBackground
         source={require(image)}
         resizeMode="stretch"
@@ -35,14 +35,7 @@ const App = () => {
             <Text>Log into your acccount.</Text>
           </View> */}
 
-          <View
-            style={{
-              flexDirection: 'row',
-              borderRadius: 30,
-              borderWidth: 1,
-              borderColor: 'white',
-              width: 300,
-            }}>
+          <View style={styles.inputContainer}>
             <FontAwesomeIcon
               icon={faUser}
               color={'white'}
@@ -73,7 +66,7 @@ const App = () => {
           </View>
 
           <View style={styles.frgtPassword}>
-            <Text style={{color: 'white'}}>Forgot Password?</Text>
+            <Text style={{color: 'white'}}>Forgot Password ?</Text>
           </View>
 
           <View>
@@ -86,20 +79,24 @@ const App = () => {
 
           <View style={styles.socialMediaButtons}>
             <TouchableOpacity style={styles.socialButton}>
-              <FontAwesomeIcon icon={faFacebook} color="#0044FF" />
-              <Text style={{color: 'black', alignSelf: 'center'}}>
+              <FontAwesomeIcon icon={faFacebook} color="#0044FF" size={24} />
+              <Text
+                style={{color: 'black', alignSelf: 'center', marginLeft: 10}}>
                 Facebook
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.socialButton}>
-              <FontAwesomeIcon icon={faTwitter} color="#0091FF" />
-              <Text style={{color: 'black', alignSelf: 'center'}}>Twitter</Text>
+              <FontAwesomeIcon icon={faTwitter} color="#0091FF" size={24} />
+              <Text
+                style={{color: 'black', alignSelf: 'center', marginLeft: 10}}>
+                Twitter
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -117,8 +114,8 @@ const styles = StyleSheet.create({
   },
   logoStyle: {
     alignSelf: 'center',
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     marginBottom: 50,
   },
   directions: {
@@ -174,6 +171,7 @@ const styles = StyleSheet.create({
     height: 30,
   },
   socialButton: {
+    flexDirection: 'row',
     backgroundColor: 'white',
     borderRadius: 30,
     width: 120,
