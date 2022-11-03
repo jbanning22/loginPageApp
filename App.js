@@ -9,14 +9,10 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
-import {
-  FontAwesomeIcon,
-  SolidIcons,
-  RegularIcons,
-  BrandIcons,
-  parseIconFromClassName,
-} from '@fortawesome/react-native-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import Button from './src/components/Button';
+import {faMugSaucer} from '@fortawesome/free-solid-svg-icons/faMugSaucer';
+import {faUser} from '@fortawesome/free-solid-svg-icons/faUser';
 
 const image = './src/img/bgImage.png';
 
@@ -36,8 +32,8 @@ const App = () => {
             <Text>Log into your acccount.</Text>
           </View> */}
 
-          {/* <View style={styles.input}> */}
-          {/* <FontAwesomeIcon icon="fa-solid fa-user" /> */}
+          {/* <View style={styles.input}>  */}
+          <FontAwesomeIcon icon={faUser} color={'white'} size={24} />
           <TextInput
             placeholder="Username"
             placeholderTextColor={'white'}
@@ -68,7 +64,7 @@ const App = () => {
 
           <View style={styles.socialMediaButtons}>
             <TouchableOpacity style={styles.socialButton}>
-              <FontAwesomeIcon icon="fa-brands fa-facebook" />
+              {/* <FontAwesomeIcon icon="fa-brands fa-facebook" /> */}
               <Text style={{color: 'black', alignSelf: 'center'}}>
                 Facebook
               </Text>
