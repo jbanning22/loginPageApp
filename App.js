@@ -17,15 +17,18 @@ const image = './src/img/bgImage.png';
 const App = () => {
   return (
     <SafeAreaView style={styles.screen}>
-      <ImageBackground source={require(image)} style={{flex: 1}}>
+      <ImageBackground
+        source={require(image)}
+        resizeMode="stretch"
+        style={{flex: 1}}>
         <View style={styles.container}>
           <Image
             style={styles.logoStyle}
             source={require('./src/img/logo.jpg')}
           />
-          <View style={styles.directions}>
+          {/* <View style={styles.directions}>
             <Text>Log into your acccount.</Text>
-          </View>
+          </View> */}
 
           {/* <View style={styles.input}> */}
           {/* <FontAwesomeIcon icon="fa-solid fa-user" /> */}
@@ -38,7 +41,7 @@ const App = () => {
           {/* </View> */}
 
           <View style={styles.frgtPassword}>
-            <Text>Forgot Password?</Text>
+            <Text style={{color: 'white'}}>Forgot Password?</Text>
           </View>
 
           <View>
@@ -50,14 +53,16 @@ const App = () => {
           </View>
 
           <View style={styles.socialMediaButtons}>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.socialButton}>
               {/* <FontAwesomeIcon icon="fa-brands fa-facebook" /> */}
-              <Text>Facebook</Text>
+              <Text style={{color: 'black', alignSelf: 'center'}}>
+                Facebook
+              </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.socialButton}>
               {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
-              <Text>Twitter</Text>
+              <Text style={{color: 'black', alignSelf: 'center'}}>Twitter</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     height: 100,
     width: 100,
-    marginTop: 100,
+    marginBottom: 50,
   },
   directions: {
     alignSelf: 'center',
@@ -108,13 +113,14 @@ const styles = StyleSheet.create({
   },
   frgtPassword: {
     alignSelf: 'flex-end',
-    marginRight: 25,
+    marginRight: 70,
   },
   loginWith: {
     margin: 15,
     font: 15,
     justifyContent: 'center',
     alignSelf: 'center',
+    color: 'white',
   },
   loginButtons: {
     flexDirection: 'row',
@@ -125,13 +131,22 @@ const styles = StyleSheet.create({
     width: 80,
     height: 30,
   },
+  socialButton: {
+    backgroundColor: 'white',
+    borderRadius: 30,
+    width: 120,
+    height: 40,
+    padding: 10,
+    marginRight: 25,
+    marginLeft: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   socialMediaButtons: {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     alignSelf: 'center',
-    backgroundColor: 'red',
-
-    width: 20,
+    padding: 5,
   },
 });
