@@ -14,6 +14,8 @@ import Button from './src/components/Button';
 import {faMugSaucer} from '@fortawesome/free-solid-svg-icons/faMugSaucer';
 import {faUser} from '@fortawesome/free-solid-svg-icons/faUser';
 import {faLock} from '@fortawesome/free-solid-svg-icons/faLock';
+import {faFacebook} from '@fortawesome/free-brands-svg-icons/faFacebook';
+import {faTwitter} from '@fortawesome/free-brands-svg-icons/faTwitter';
 
 const image = './src/img/bgImage.png';
 
@@ -84,14 +86,14 @@ const App = () => {
 
           <View style={styles.socialMediaButtons}>
             <TouchableOpacity style={styles.socialButton}>
-              {/* <FontAwesomeIcon icon="fa-brands fa-facebook" />
+              <FontAwesomeIcon icon={faFacebook} color="#0044FF" />
               <Text style={{color: 'black', alignSelf: 'center'}}>
                 Facebook
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.socialButton}>
-              {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
+              <FontAwesomeIcon icon={faTwitter} color="#0091FF" />
               <Text style={{color: 'black', alignSelf: 'center'}}>Twitter</Text>
             </TouchableOpacity>
           </View>
