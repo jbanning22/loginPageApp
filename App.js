@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import Button from './src/components/Button';
-import {faMugSaucer} from '@fortawesome/free-solid-svg-icons/faMugSaucer';
 import {faUser} from '@fortawesome/free-solid-svg-icons/faUser';
 import {faLock} from '@fortawesome/free-solid-svg-icons/faLock';
 import {faFacebook} from '@fortawesome/free-brands-svg-icons/faFacebook';
@@ -31,16 +30,13 @@ const App = () => {
             style={styles.logoStyle}
             source={require('./src/img/logo.jpg')}
           />
-          {/* <View style={styles.directions}>
-            <Text>Log into your acccount.</Text>
-          </View> */}
 
           <View style={styles.inputContainer}>
             <FontAwesomeIcon
               icon={faUser}
               color={'white'}
               size={24}
-              style={{marginLeft: 20, marginTop: 10}}
+              style={styles.fontAwesStyle}
             />
             <TextInput
               placeholder="Username"
@@ -55,18 +51,18 @@ const App = () => {
               icon={faLock}
               color={'white'}
               size={24}
-              style={{marginLeft: 20, marginTop: 10}}
+              style={styles.fontAwesStyle}
             />
             <TextInput
               placeholder="Passsword"
               autocorrect={false}
-              placeholderTextColor={'white'}
+              placeholderTextColor="white"
               style={styles.input}
             />
           </View>
 
           <View style={styles.frgtPassword}>
-            <Text style={{color: 'white'}}>Forgot Password ?</Text>
+            <Text style={styles.frgtpasswordText}>Forgot Password ?</Text>
           </View>
 
           <View>
@@ -79,19 +75,13 @@ const App = () => {
 
           <View style={styles.socialMediaButtons}>
             <TouchableOpacity style={styles.socialButton}>
-              <FontAwesomeIcon icon={faFacebook} color="#0044FF" size={24} />
-              <Text
-                style={{color: 'black', alignSelf: 'center', marginLeft: 10}}>
-                Facebook
-              </Text>
+              <FontAwesomeIcon icon={faFacebook} color="#0044FF" size={20} />
+              <Text style={styles.textStyle}>Facebook</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.socialButton}>
-              <FontAwesomeIcon icon={faTwitter} color="#0091FF" size={24} />
-              <Text
-                style={{color: 'black', alignSelf: 'center', marginLeft: 10}}>
-                Twitter
-              </Text>
+              <FontAwesomeIcon icon={faTwitter} color="#0091FF" size={20} />
+              <Text style={styles.textStyle}>Twitter</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -106,6 +96,10 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
+  fontAwesStyle: {
+    marginLeft: 20,
+    marginTop: 10,
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -117,23 +111,27 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
     marginBottom: 50,
+    borderRadius: 75,
   },
   directions: {
     alignSelf: 'center',
     marginTop: 30,
     marginBottom: 30,
   },
+  textStyle: {
+    color: 'black',
+    alignSelf: 'center',
+    marginLeft: 10,
+    fontWeight: '200',
+  },
   input: {
     height: 50,
     width: 300,
-    // justifyContent: 'center',
-    // alignItems: 'center'
-
-    // padding: 5,
+    fontSize: 18,
+    color: 'white',
+    fontWeight: '300',
     fontFamily: 'Tamil Sangam MN',
-
     borderColor: 'white',
-    // marginVertical: 20,
     paddingLeft: 20,
   },
   inputContainer: {
@@ -154,10 +152,15 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginRight: 70,
   },
+  frgtpasswordText: {
+    color: 'white',
+    fontWeight: '300',
+  },
   loginWith: {
     margin: 15,
     font: 15,
     justifyContent: 'center',
+    fontWeight: '300',
     alignSelf: 'center',
     color: 'white',
   },
@@ -187,6 +190,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     alignSelf: 'center',
-    // padding: 5,
   },
 });

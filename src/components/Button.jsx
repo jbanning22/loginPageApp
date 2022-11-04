@@ -16,6 +16,7 @@ export default Button;
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 30,
@@ -23,11 +24,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
-    font: 24,
+    fontSize: 16,
     fontFamily: 'Tamil Sangam MN',
     color: 'orangered',
-    fontWeight: 'bold',
     alignSelf: 'center',
-    padding: 5,
+    paddingTop: 5,
+    fontWeight: '300',
   },
 });
